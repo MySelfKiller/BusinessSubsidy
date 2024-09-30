@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="@dimen/dp_10"
+            android:paddingVertical="@dimen/dp_10"
+            android:descendantFocusability="blocksDescendants">
+            <com.rishabhharit.roundedimageview.RoundedImageView
+                android:id="@+id/item_promote_img"
+                android:layout_width="@dimen/dp_35"
+                android:layout_height="@dimen/dp_35"
+                app:cornerRadius="@dimen/dp_20"
+                app:roundedCorners="all"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                android:id="@+id/item_promote_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sp_18"
+                android:textStyle="bold"
+                android:layout_marginStart="@dimen/dp_10"
+                android:text="周周周"
+                android:textColor="@color/slight_blue1"
+                app:layout_constraintTop_toTopOf="@id/item_promote_img"
+                app:layout_constraintBottom_toBottomOf="@id/item_promote_img"
+                app:layout_constraintStart_toEndOf="@id/item_promote_img"/>
+
+            <TextView
+                android:id="@+id/item_promote_content_tv"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sp_14"
+                android:layout_marginTop="@dimen/dp_15"
+                android:textIsSelectable="true"
+                android:text="心无平淡，生活就会发光\n万物可爱，努力就有机会\n马上月底啦，我们继续加油啊"
+                android:textColor="@color/grayText8"
+                app:layout_constraintTop_toBottomOf="@id/item_promote_img"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+            <com.lzy.ninegrid.NineGridView
+                android:id="@+id/item_promote_nine_images"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_6"
+                app:showStyle="grid"
+                app:ngv_maxSize="9"
+                app:ngv_gridSpacing="@dimen/dp_4"
+                app:ngv_mode="tile"
+                app:ngv_tileMaxHeight="@dimen/dp_200"
+                app:layout_constraintTop_toBottomOf="@id/item_promote_content_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/divider"/>
+    </LinearLayout>
+
+</layout>

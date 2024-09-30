@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+apply from:'../dependencies.gradle'
+apply plugin: 'org.jetbrains.kotlin.android'
+
+android {
+    namespace 'com.kayu.business.subsidy'
+
+    defaultConfig {
+        applicationId "com.kayu.business.subsidy"
+    }
+
+
+    //配置自定义打包名称
+    applicationVariants.all { variant ->
+        variant.outputs.each{ output ->
+
+        }
+        variant.outputs.all {
+            def fileName = "BusinessSubsidy_.apk"
+            def date = new Date()
+            def formattedDate = date.format('yyyyMMddHHmm')
+            if (variant.buildType.name.equals('release')) {
+                fileName = "BusinessSubsidy_${variant.mergedFlavor.versionName}_release_${formattedDate}.apk"
+            } else if (variant.buildType.name.equals('debug')) {
+                fileName = "BusinessSubsidy_${variant.mergedFlavor.versionName}_debug_${formattedDate}.apk"
+            }
+            outputFileName = fileName
+        }
+    }
+}
+
+dependencies {
+    implementation project(path: ':lib_common')
+//    implementation 'androidx.core:core-ktx:1.8.0'
+//    implementation 'androidx.appcompat:appcompat:1.5.1'
+//    implementation "androidx.core:core-ktx:1.8.0"
+//    implementation "androidx.activity:activity-ktx:1.5.1"//新添加
+//    implementation "androidx.fragment:fragment-ktx:1.5.2"
+//    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+//    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
+//    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+//    implementation 'com.google.android.material:material:1.5.0'
+//    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
+//    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+//    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+//    implementation 'androidx.navigation:navigation-fragment-ktx:2.4.1'
+//    implementation 'androidx.navigation:navigation-ui-ktx:2.4.1'
+//
+//    testImplementation 'junit:junit:4.13.2'
+//    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}

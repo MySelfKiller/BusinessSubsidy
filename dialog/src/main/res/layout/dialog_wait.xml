@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/box_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:minWidth="@dimen/dp_125"
+        android:minHeight="@dimen/dp_125">
+
+        <RelativeLayout
+            android:id="@+id/box_blur"
+            android:layout_width="@dimen/dp_125"
+            android:layout_height="@dimen/dp_125"></RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/box_progress"
+                android:layout_width="@dimen/dp_65"
+                android:layout_height="@dimen/dp_65">
+
+                <com.kongzue.dialog.util.view.ProgressView
+                    android:id="@+id/progress"
+                    app:borderWidth ="@dimen/dp_1_5"
+                    android:layout_centerInParent="true"
+                    android:layout_width="@dimen/dp_55"
+                    android:layout_height="@dimen/dp_55" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/box_tip"
+                android:layout_width="@dimen/dp_65"
+                android:layout_height="@dimen/dp_65"
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:id="@+id/box_progress_gif"
+                android:layout_width="@dimen/dp_55"
+                android:layout_height="@dimen/dp_55"
+                android:visibility="gone">
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/progress_gif"
+                    app:borderWidth ="@dimen/dp_1_5"
+                    android:layout_centerInParent="true"
+                    android:layout_width="@dimen/dp_45"
+                    android:layout_height="@dimen/dp_45" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txt_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_15"
+                android:gravity="center"
+                android:maxLines="3"
+                android:text="Tip"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_14" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

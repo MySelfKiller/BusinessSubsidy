@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    android:gravity="bottom"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/mTv_Title_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/select_dialog_item_bg_top"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/mTv_Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dp_15"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingRight="@dimen/dp_20"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_18"
+            android:gravity="center_vertical"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/mTv_Title_sub"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingRight="@dimen/dp_20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/subText"
+            android:textSize="@dimen/sp_12"
+            android:gravity="center_vertical"
+            android:visibility="gone"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_5"
+            android:layout_marginTop="@dimen/dp_15"
+            android:background="@color/divider"/>
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/dialog_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="#DAD9DB"
+        android:dividerHeight="@dimen/dp_0_5"
+        android:listSelector="@android:color/transparent" />
+<!--    <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="@dimen/dp_20"-->
+<!--        android:background="@drawable/select_dialog_item_bg_center"/>-->
+
+</LinearLayout>

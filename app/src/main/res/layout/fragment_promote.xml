@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".ui.recruit.PromoteFragment">
+
+    <com.flyco.tablayout.CommonTabLayout
+        android:id="@+id/promote_tab_lay"
+        android:layout_width="@dimen/dp_200"
+        android:layout_height="@dimen/dp_36"
+        app:tl_iconVisible="false"
+        app:tl_textsize="@dimen/sp_16"
+        app:tl_textBold="SELECT"
+        app:tl_textSelectColor="@color/black"
+        app:tl_textUnselectColor="@color/grayText8"
+        app:tl_indicator_color="#dd4725"
+        app:tl_indicator_color_end="#fdfafa"
+        app:tl_indicator_height="@dimen/dp_8"
+        app:tl_indicator_width="@dimen/dp_60"
+        app:tl_indicator_corner_radius="@dimen/dp_4"
+        app:tl_indicator_style="NORMAL"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_tab_layout"/>
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/order_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.scwang.smart.refresh.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlClassicsSpinnerStyle="FixedBehind"
+            app:srlPrimaryColor="@color/transparent"
+            app:srlAccentColor="@color/black"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/promote_recycler_view"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
+        </androidx.recyclerview.widget.RecyclerView>
+        <com.scwang.smart.refresh.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlClassicsSpinnerStyle="FixedBehind"
+            app:srlPrimaryColor="@color/transparent"
+            app:srlAccentColor="@color/black"/>
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+</LinearLayout>

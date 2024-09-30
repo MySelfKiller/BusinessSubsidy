@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dark">#353535</color>
+    <color name="empty">#00000000</color>
+    <color name="waitDialogBackgroundDark">#f0181818</color>
+    <color name="waitDialogBackgroundLight">#E6F4F5F6</color>
+    <color name="dialogButtonBlueLight">#DCE9F7</color>
+    <color name="dialogButtonBlueLightPress">#C7DFF7</color>
+    <color name="dialogButtonGrayLight">#f2f2f2</color>
+    <color name="dialogButtonGrayLightPress">#dfdfdf</color>
+    <color name="dialogButtonIOSLightPress">#0f000000</color>
+    <color name="dialogSplitIOSLight">#2c000000</color>
+    <color name="dialogSplitIOSDark">#4e4e50</color>
+    <color name="dialogButtonIOSNormal">#007aff</color>
+
+    <color name="dialogBkgIOSLight">#F4F5F6</color>
+    <color name="dialogBkgDark">#181818</color>
+    <color name="dialogButtonBlueDark">#14dfdfdf</color>
+    <color name="dialogButtonBlueDarkPress">#1ec0d4f1</color>
+    <color name="dialogButtonGrayDark">#14dfdfdf</color>
+    <color name="dialogButtonGrayDarkPress">#1ec0d4f1</color>
+    <color name="whiteAlpha50">#80FFFFFF</color>
+    <color name="whiteAlpha30">#4DFFFFFF</color>
+    <color name="whiteAlpha10">#1AFFFFFF</color>
+    <color name="blackAlpha30">#4D000000</color>
+    <color name="blackAlpha10">#1A000000</color>
+    <color name="notificationNormal">#353535</color>
+    <color name="notificationError">#e74e63</color>
+    <color name="notificationWarning">#ef8e43</color>
+    <color name="notificationFinish">#53ae5d</color>
+    <color name="notificationTipTextColorMaterial">#757575</color>
+    <color name="tipTextColor">#8f8f8f</color>
+    <color name="menuSplitSpaceKongzue">#f1f2f4</color>
+
+    <color name="materialDarkTextColor">#E9EAEE</color>
+    <color name="materialDarkTitleColor">#9BA0A6</color>
+    <color name="kongzueDarkBkgColor">#202125</color>
+    <color name="materialDarkBackgroundColor">#2D2E30</color>
+    <color name="dialogButtonMIUITextGray">#606060</color>
+
+
+    <color name="grayText">#D8D8D8</color>
+    <color name="subText">#7C7C7C</color>
+    <color name="subText1">#9FABBD</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="normal_btu_col">#FF0098EE</color>
+    <color name="normal_btu_del">#3F5060</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="divider">#F2F2F2</color>
+    <color name="black">#262626</color>
+    <color name="white_slight">#eeeeee</color>
+    <color name="colorTransparent">#00000000</color>
+
+    <color name="base_bg">#ffeeeeee</color>
+    <color name="base_msg_color">#ff999999</color>
+    <color name="dialog_loading_color">#60000000</color>
+    <color name="common_toolbar_bg_color">#288dff</color>
+    <color name="tool_bar_bg">#00b9ef</color>
+
+    <color name="dialog_title">#3e3a39</color>
+    <color name="dialog_content">#666464</color>
+    <color name="dialog_btn_confirm">#7ecef4</color>
+    <color name="dialog_btn_cancel">#7ecef4</color>
+    <color name="grey_light">#E7EEF3</color>
+</resources>

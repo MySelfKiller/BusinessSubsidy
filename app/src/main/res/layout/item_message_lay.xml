@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_marginHorizontal="@dimen/dp_15"
+        android:layout_marginBottom="@dimen/dp_15"
+        android:paddingHorizontal="@dimen/dp_20"
+        android:paddingBottom="@dimen/dp_5"
+        android:background="@drawable/white1_bg_shape">
+
+        <TextView
+            android:id="@+id/item_msg_title"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:lineSpacingExtra="@dimen/dp_5"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/black1"
+            android:paddingVertical="@dimen/dp_10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/item_msg_detail"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/item_msg_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查看"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/colorAccent"
+            android:layout_marginTop="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_2"
+            android:paddingBottom="@dimen/dp_3"
+            android:paddingHorizontal="@dimen/dp_20"
+            android:background="@drawable/solid_shape"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/item_msg_first"
+            android:layout_width="@dimen/dp_0"
+            android:paddingBottom="@dimen/dp_8"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:lineSpacingExtra="@dimen/dp_5"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/black1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_msg_title" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/item_msg_content_recycler"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="@dimen/dp_5"
+            tools:itemCount="4"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/black1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_msg_first" />
+        <TextView
+            android:id="@+id/item_msg_remark"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp_10"
+            android:text=""
+            android:lineSpacingExtra="@dimen/dp_5"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/black1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_msg_content_recycler" />
+        <View
+            android:id="@+id/id_tag_divider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+
+            android:background="@color/divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_msg_remark"/>
+        <TextView
+            android:id="@+id/item_msg_time"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:paddingVertical="@dimen/dp_10"
+            android:lineSpacingExtra="@dimen/dp_5"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/grayText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/id_tag_divider" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

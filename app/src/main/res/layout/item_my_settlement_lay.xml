@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+    </data>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/dp_15"
+            android:paddingVertical="@dimen/dp_15"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/item_settle_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="民生初审版（挣来）"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/item_settle_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2023-08-18 16:22:22"
+                android:layout_marginTop="@dimen/dp_5"
+                android:textColor="@color/grayText6"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_settle_product"/>
+
+            <TextView
+                android:id="@+id/item_settle_price"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="+129"
+                android:textColor="@color/red_text3"
+                android:textSize="@dimen/sp_18"
+                android:layout_marginEnd="@dimen/dp_30"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+            <TextView
+                android:id="@+id/item_settle_price_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="元"
+                android:paddingBottom="@dimen/dp_2"
+                android:textColor="@color/red_text3"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="@id/item_settle_price"
+                app:layout_constraintStart_toEndOf="@id/item_settle_price"
+                app:layout_constraintBottom_toBottomOf="@id/item_settle_price"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/divider"/>
+    </LinearLayout>
+
+</layout>

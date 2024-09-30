@@ -1,0 +1,34 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://maven.aliyun.com/repository/public' }
+//        jcenter() // Warning: this repository is going to shut down soon
+        maven { url 'https://www.jitpack.io'}
+//        maven {url 'https://dl.bintray.com/jetbrains/anko'}
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+//        jcenter()
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://www.jitpack.io' }
+//        maven {url 'https://dl.bintray.com/jetbrains/anko'}
+    }
+}
+rootProject.name = "BusinessSubsidy"
+include ':app'
+include ':dialog'
+include ':ninegridview'
+include ':utils'
+include ':lib_base'
+include ':form_verify'
+include ':FlycoTabLayout_Lib'
+include ':library_update'
+include ':lib_common'
+include ':textbanner'
+include ':banner'
+

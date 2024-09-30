@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">甜头推卡</string>
+    <string name="title_home">首页</string>
+    <string name="title_mine">我的</string>
+    <string name="title_performance">数据</string>
+    <string name="title_notice">消息</string>
+    <string name="title_order">订单</string>
+    <string name="title_activity_main" translatable="false">主页面</string>
+    <string name="title_shared" translatable="false">发圈素材</string>
+    <string name="prompt_phone_user" translatable="false">请输入手机号</string>
+    <string name="prompt_sms_code" translatable="false">请输入验证码</string>
+    <string name="action_login" translatable="false">登录</string>
+    <string name="invalid_username" translatable="false">请输入正确的手机号</string>
+    <string name="invalid_password" translatable="false">验证码必须大于4位</string>
+    <string name="login_failed" translatable="false">"登录失败"</string>
+    <string name="title_activity_login" translatable="false">登录页</string>
+    <string name="modify_price_tips">您可以单独设置这名代理的结算价格，设置后该价格不会因为您在产品管理中的修改发生变化</string>
+</resources>

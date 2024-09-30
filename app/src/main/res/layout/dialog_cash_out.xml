@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/dp_10"
+        android:layout_marginHorizontal="@dimen/dp_40"
+        android:paddingVertical="@dimen/dp_30"
+        android:background="@drawable/white_bg_shape">
+        <TextView
+            android:id="@+id/dia_all_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提现金额：0.00"
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:paddingVertical="@dimen/dp_12"
+            android:paddingHorizontal="@dimen/dp_40"
+            android:background="@drawable/card_option_bg_shape"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/id_target_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="实际到账金额（元）"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/grayText4"
+            android:gravity="center"
+            android:padding="@dimen/dp_5"
+            android:layout_marginTop="@dimen/dp_25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dia_all_amount" />
+        <TextView
+            android:id="@+id/dia_real_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.00"
+            android:textStyle="bold"
+            android:textSize="@dimen/sp_34"
+            android:textColor="@color/black"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/id_target_amount" />
+
+
+        <TextView
+            android:id="@+id/dia_tips1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/dp_30"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/grayText"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dia_real_amount" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/dia_confirm"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_25"
+            android:layout_marginHorizontal="@dimen/dp_30"
+            android:layout_marginBottom="@dimen/dp_2"
+            android:paddingVertical="@dimen/dp_15"
+            android:background="@drawable/deep_blue_bg_shape"
+            android:gravity="center"
+            android:minHeight="0dp"
+            android:paddingTop="@dimen/dp_12"
+            android:paddingBottom="@dimen/dp_12"
+            android:text="确认提现"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintTop_toBottomOf="@id/dia_tips1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

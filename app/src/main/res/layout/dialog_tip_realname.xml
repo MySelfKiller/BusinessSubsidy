@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/box_root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_bg_shape"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="@dimen/dp_280"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_realname_bg"/>
+
+        <TextView
+            android:id="@+id/txt_dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_20"
+            android:gravity="center"
+            android:text="请先完成实名认证"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/sp_15"
+            android:textStyle="bold"/>
+
+
+
+        <ImageView
+            android:id="@+id/split_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_5"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@color/dark" />
+
+        <LinearLayout
+            android:id="@+id/box_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/btn_selectNegative"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_weight="1"
+                android:background="@drawable/button_dialog_ios_left_light"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/grayText2"
+                android:textSize="@dimen/sp_16" />
+
+            <ImageView
+                android:id="@+id/split_vertical2"
+                android:layout_width="@dimen/dp_0_5"
+                android:layout_height="match_parent"
+                android:background="@color/dark" />
+
+            <TextView
+                android:id="@+id/btn_selectPositive"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_weight="1"
+                android:background="@drawable/button_dialog_ios_right_light"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/sp_16" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

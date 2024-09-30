@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.kayu.business.subsidy.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_order"
+        android:name="com.kayu.business.subsidy.ui.order.OrderFragment"
+        android:label="@string/title_order"
+        tools:layout="@layout/fragment_order" />
+    <fragment
+        android:id="@+id/navigation_notice"
+        android:name="com.kayu.business.subsidy.ui.notice.NoticeFragment"
+        android:label="@string/title_notice"
+        tools:layout="@layout/fragment_notice" />
+    <fragment
+        android:id="@+id/navigation_performance"
+        android:name="com.kayu.business.subsidy.ui.team.PerformanceFragment"
+        android:label="@string/title_performance"
+        tools:layout="@layout/fragment_performance" />
+
+    <fragment
+        android:id="@+id/navigation_mine"
+        android:name="com.kayu.business.subsidy.ui.mine.MineFragment"
+        android:label="@string/title_mine"
+        tools:layout="@layout/fragment_mine" />
+</navigation>

@@ -1,0 +1,13 @@
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/text"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="left|center_vertical"
+    android:paddingBottom="@dimen/dp_13"
+    android:paddingLeft="@dimen/dp_20"
+    android:paddingRight="@dimen/dp_20"
+    android:paddingTop="13dp"
+    android:singleLine="true"
+    android:text=""
+    android:textColor="@color/notificationTipTextColorMaterial"
+    android:textSize="@dimen/sp_16" />

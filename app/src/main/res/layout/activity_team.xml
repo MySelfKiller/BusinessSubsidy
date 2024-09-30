@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.team.TeamActivity">
+    <include layout="@layout/titlebar_white"
+        android:id="@+id/team_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/team_refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        app:layout_constraintTop_toBottomOf="@id/team_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.scwang.smart.refresh.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_55"
+            app:srlAccentColor="@color/black"
+            app:srlClassicsSpinnerStyle="FixedBehind"
+            app:srlPrimaryColor="@color/transparent" />
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_15"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/dp_20"
+                    android:background="@drawable/white_bg_shape">
+
+                    <TextView
+                        android:id="@+id/id_team_num_title"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:text="团队人数详情"
+                        android:paddingHorizontal="@dimen/dp_15"
+                        android:paddingVertical="@dimen/dp_12"
+                        android:textColor="@color/slight_white4"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold"
+                        android:background="@drawable/card_option2_bg_shape"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <View
+                        android:layout_width="@dimen/dp_4"
+                        android:layout_height="@dimen/dp_12"
+                        android:background="@drawable/org_bg_shape"
+                        android:layout_marginEnd="@dimen/dp_5"
+                        app:layout_constraintEnd_toStartOf="@id/id_team_direct_num"
+                        app:layout_constraintTop_toTopOf="@id/id_team_direct_num"
+                        app:layout_constraintBottom_toBottomOf="@id/id_team_direct_num"/>
+                    <TextView
+                        android:id="@+id/id_team_direct_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginStart="@dimen/dp_25"
+                        android:text="直营团队(人)"
+                        android:paddingVertical="@dimen/dp_10"
+                        android:textSize="@dimen/sp_14"
+                        android:textColor="@color/black"
+                        app:layout_constraintTop_toBottomOf="@id/id_team_num_title"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/team_direct_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/sp_28"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="@id/id_team_direct_num"
+                        app:layout_constraintTop_toBottomOf="@id/id_team_direct_num"/>
+                    <TextView
+                        android:id="@+id/team_direct_num_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="昨日+0"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        android:textSize="@dimen/sp_12"
+                        android:textColor="@color/grayText1"
+                        android:layout_marginStart="@dimen/dp_6"
+                        app:layout_constraintBaseline_toBaselineOf="@id/team_direct_num"
+                        app:layout_constraintStart_toEndOf="@id/team_direct_num"
+                        app:layout_constraintBottom_toBottomOf="@id/team_direct_num"/>
+
+
+                    <View
+                        android:layout_width="@dimen/dp_4"
+                        android:layout_height="@dimen/dp_12"
+                        android:background="@drawable/org_bg_shape1"
+                        android:layout_marginEnd="@dimen/dp_5"
+                        app:layout_constraintEnd_toStartOf="@id/id_team_total_num"
+                        app:layout_constraintTop_toTopOf="@id/id_team_total_num"
+                        app:layout_constraintBottom_toBottomOf="@id/id_team_total_num"/>
+                    <TextView
+                        android:id="@+id/id_team_total_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginStart="@dimen/dp_25"
+                        android:text="团队总人数(人)"
+                        android:paddingVertical="@dimen/dp_10"
+                        android:textSize="@dimen/sp_14"
+                        android:textColor="@color/black"
+                        app:layout_constraintTop_toBottomOf="@id/team_direct_num"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/team_total_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/sp_28"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="@id/id_team_total_num"
+                        app:layout_constraintTop_toBottomOf="@id/id_team_total_num"/>
+                    <TextView
+                        android:id="@+id/team_total_num_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="昨日+0"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        android:textSize="@dimen/sp_12"
+                        android:textColor="@color/grayText1"
+                        android:layout_marginStart="@dimen/dp_6"
+                        app:layout_constraintBaseline_toBaselineOf="@id/team_total_num"
+                        app:layout_constraintStart_toEndOf="@id/team_total_num"
+                        app:layout_constraintBottom_toBottomOf="@id/team_total_num"/>
+
+
+                    <TextView
+                        android:id="@+id/team_detail_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginStart="@dimen/dp_25"
+                        android:text="团队详情 >"
+                        android:paddingVertical="@dimen/dp_12"
+                        android:textSize="@dimen/sp_13"
+                        android:textColor="@color/yellow1"
+                        android:layout_marginEnd="@dimen/dp_20"
+                        app:layout_constraintTop_toBottomOf="@id/id_team_num_title"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:paddingBottom="@dimen/dp_20"
+                    android:background="@drawable/white_bg_shape">
+
+                    <TextView
+                        android:id="@+id/id_team_per_title"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:text="团队业绩详情"
+                        android:paddingHorizontal="@dimen/dp_15"
+                        android:paddingVertical="@dimen/dp_12"
+                        android:textColor="@color/slight_white4"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold"
+                        android:background="@drawable/card_option2_bg_shape"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <View
+                        android:layout_width="@dimen/dp_4"
+                        android:layout_height="@dimen/dp_12"
+                        android:background="@drawable/org_bg_shape"
+                        android:layout_marginEnd="@dimen/dp_5"
+                        app:layout_constraintEnd_toStartOf="@id/id_team_settle_num"
+                        app:layout_constraintTop_toTopOf="@id/id_team_settle_num"
+                        app:layout_constraintBottom_toBottomOf="@id/id_team_settle_num"/>
+                    <TextView
+                        android:id="@+id/id_team_settle_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginStart="@dimen/dp_25"
+                        android:text="本月结算(张)"
+                        android:paddingVertical="@dimen/dp_10"
+                        android:textSize="@dimen/sp_14"
+                        android:textColor="@color/black"
+                        app:layout_constraintTop_toBottomOf="@id/id_team_per_title"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/team_settle_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/sp_28"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="@id/id_team_settle_num"
+                        app:layout_constraintTop_toBottomOf="@id/id_team_settle_num"/>
+                    <TextView
+                        android:id="@+id/team_settle_num_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="昨日+0"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        android:textSize="@dimen/sp_12"
+                        android:textColor="@color/grayText1"
+                        android:layout_marginStart="@dimen/dp_6"
+                        app:layout_constraintBaseline_toBaselineOf="@id/team_settle_num"
+                        app:layout_constraintStart_toEndOf="@id/team_settle_num"
+                        app:layout_constraintBottom_toBottomOf="@id/team_settle_num"/>
+
+
+                    <View
+                        android:layout_width="@dimen/dp_4"
+                        android:layout_height="@dimen/dp_12"
+                        android:background="@drawable/org_bg_shape1"
+                        android:layout_marginEnd="@dimen/dp_5"
+                        app:layout_constraintEnd_toStartOf="@id/id_team_total_settle_num"
+                        app:layout_constraintTop_toTopOf="@id/id_team_total_settle_num"
+                        app:layout_constraintBottom_toBottomOf="@id/id_team_total_settle_num"/>
+                    <TextView
+                        android:id="@+id/id_team_total_settle_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginStart="@dimen/dp_25"
+                        android:text="本月团队总业绩(元)"
+                        android:paddingVertical="@dimen/dp_10"
+                        android:textSize="@dimen/sp_14"
+                        android:textColor="@color/black"
+                        app:layout_constraintTop_toBottomOf="@id/team_settle_num"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/team_total_settle_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/sp_28"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="@id/id_team_total_settle_num"
+                        app:layout_constraintTop_toBottomOf="@id/id_team_total_settle_num"/>
+                    <TextView
+                        android:id="@+id/team_total_settle_num_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="昨日+0"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        android:textSize="@dimen/sp_12"
+                        android:textColor="@color/grayText1"
+                        android:layout_marginStart="@dimen/dp_6"
+                        app:layout_constraintBaseline_toBaselineOf="@id/team_total_settle_num"
+                        app:layout_constraintStart_toEndOf="@id/team_total_settle_num"
+                        app:layout_constraintBottom_toBottomOf="@id/team_total_settle_num"/>
+
+
+                    <TextView
+                        android:id="@+id/team_history_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginStart="@dimen/dp_25"
+                        android:text="历史详情 >"
+                        android:paddingVertical="@dimen/dp_12"
+                        android:textSize="@dimen/sp_13"
+                        android:textColor="@color/yellow1"
+                        android:layout_marginEnd="@dimen/dp_20"
+                        app:layout_constraintTop_toBottomOf="@id/id_team_per_title"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:paddingBottom="@dimen/dp_20"
+                    android:background="@drawable/white_bg_shape">
+                    <TextView
+                        android:id="@+id/id_team_my_recommend"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:text="我的推荐人"
+                        android:paddingHorizontal="@dimen/dp_15"
+                        android:paddingVertical="@dimen/dp_12"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <com.rishabhharit.roundedimageview.RoundedImageView
+                        android:id="@+id/team_recommend_photo"
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_35"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:scaleType="fitXY"
+                        app:cornerRadius="@dimen/dp_30"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/id_team_my_recommend" />
+
+                    <TextView
+                        android:id="@+id/team_recommend_name"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:textSize="@dimen/sp_14"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toTopOf="@id/team_recommend_photo"
+                        app:layout_constraintStart_toEndOf="@id/team_recommend_photo"
+                        app:layout_constraintBottom_toBottomOf="@id/team_recommend_photo"
+                        app:layout_constraintEnd_toStartOf="@id/team_recommend_contact"/>
+                    <TextView
+                        android:id="@+id/team_recommend_contact"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:text="联系"
+                        android:paddingVertical="@dimen/dp_2"
+                        android:paddingHorizontal="@dimen/dp_20"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginEnd="@dimen/dp_15"
+                        android:textSize="@dimen/sp_13"
+                        android:textColor="@color/yellow1"
+                        android:background="@drawable/solid_yellow_shape"
+                        app:layout_constraintTop_toTopOf="@id/team_recommend_photo"
+                        app:layout_constraintBottom_toBottomOf="@id/team_recommend_photo"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
