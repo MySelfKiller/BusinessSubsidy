@@ -62,7 +62,7 @@
         app:tl_iconVisible="true"
         app:tl_textsize="@dimen/sp_16"
         app:tl_textBold="SELECT"
-        app:tl_textSelectColor="@color/black"
+        app:tl_textSelectColor="@color/colorAccent"
         app:tl_textUnselectColor="@color/grayText"
         app:tl_indicator_color="@color/black"
         app:tl_indicator_color_end="@color/black"
