@@ -11,8 +11,8 @@
         android:bottomRightRadius="@dimen/dp_5"/>
 
     <gradient
-    android:startColor="@color/startDeepBlue_btn"
-    android:endColor="@color/endDeepBlue_btn"
-    android:angle="360"/>
+    android:startColor="@color/startColor_btn"
+    android:endColor="@color/endColor_btn"
+    android:angle="90"/>
 
 </shape>

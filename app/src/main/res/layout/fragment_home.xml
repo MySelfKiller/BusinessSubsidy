@@ -61,7 +61,7 @@
                 android:textSize="@dimen/dp_14"
                 android:paddingHorizontal="@dimen/dp_8"
                 android:layout_marginEnd="@dimen/dp_5"
-                android:textColor="@color/yellow1"
+                android:textColor="@color/colorAccent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
@@ -158,7 +158,7 @@
                         app:tl_tab_width="@dimen/dp_70"
                         app:tl_textSelectColor="@color/black1"
                         app:tl_textUnselectColor="#AA363636"
-                        app:tl_indicator_color="#b0b9ca"
+                        app:tl_indicator_color="#F4B1B1"
                         app:tl_indicator_color2="#e8e8e8"
                         app:tl_indicator_corner_radius="@dimen/dp_4"
                         app:tl_indicator_margin_left="@dimen/dp_6"

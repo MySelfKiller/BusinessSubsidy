@@ -2,6 +2,7 @@ package com.kayu.business.subsidy
 
 import android.content.Intent
 import android.content.res.ColorStateList
+import android.os.Build
 import android.os.Build.VERSION.SDK_INT
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import android.widget.RelativeLayout
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.viewModelScope
 import coil.ImageLoader
@@ -79,6 +81,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 //            true
 //        }
     var badge: Badge? = null
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun ActivityMainBinding.initView() {
 //        val navView = mBinding.navView
 //        navView.getOrCreateBadge(R.id.navigation_notice).backgroundColor = resources.getColor(R.color.red,null)

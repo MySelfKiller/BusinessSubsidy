@@ -2,7 +2,7 @@ package com.hoom.library.common.http
 
 object HttpConfig {
 
-    const val HOST: String = "https://sstk.kakayuy.net/"
+    const val HOST: String = "https://www.ruiqi666.cn/"
 //    const val HOST: String = "http://192.168.3.31:8088/" //http://192.168.3.31:9090/sslm/spv/
 
     //webview关闭标识

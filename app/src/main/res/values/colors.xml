@@ -8,7 +8,7 @@
     <color name="colorPrimarySlight">#F5F5F5</color>
     <color name="colorPrimary1">#616161</color>
     <color name="colorPrimaryDark">#424242</color>
-    <color name="colorAccent">#3F5060</color>
+    <color name="colorAccent">#EC6A69</color>
     <color name="colorAccent1">#116DFF</color>
     <color name="colorAccentA">#efefef</color>
     <color name="colorAccentB">#eceefd</color>
@@ -48,8 +48,8 @@
     <color name="orange1">#f87b07</color>#f77d03
     <color name="sli_orange">#dd832d</color>
 
-    <color name="startColor_btn">#34353C</color>
-    <color name="endColor_btn">#4D5169</color>
+    <color name="startColor_btn">#EC6A69</color>
+    <color name="endColor_btn">#F4B1B1</color>
     <color name="startDeepBlue_btn">#9FABBD</color>
     <color name="endDeepBlue_btn">#3F5060</color>
 
@@ -119,7 +119,7 @@
     <color name="bg_blue_option">#ccd6f1</color>
     <color name="bg_blue_light">#f3f3fb</color>
     <color name="bg_blue_pro">#5d86cd</color>
-    <color name="bg_blue_def">#b1b8bf</color>
+    <color name="bg_blue_def">#AAF4B1B1</color>
     <color name="bg_blue_slight">#d5e8f9</color>
 
     <color name="green_text">#00ff01</color>
