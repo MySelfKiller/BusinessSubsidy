@@ -10,9 +10,9 @@
         android:bottomLeftRadius="@dimen/dp_8"
         android:bottomRightRadius="@dimen/dp_8"/>
 
-    <!--<gradient-->
-    <!--android:startColor="@color/startColor_btn"-->
-    <!--android:endColor="@color/endColor_btn"-->
-    <!--android:angle="360"/>-->
+    <gradient
+    android:startColor="@color/startColor_btn"
+    android:endColor="@color/endColor_btn"
+    android:angle="180"/>
 
 </shape>
