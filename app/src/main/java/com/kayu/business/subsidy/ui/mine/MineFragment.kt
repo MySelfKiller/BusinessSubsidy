@@ -12,7 +12,10 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import coil.load
 import com.chad.library.adapter.base.BaseQuickAdapter
@@ -98,8 +101,13 @@ class MineFragment : BaseFragment<FragmentMineBinding, MineViewModel>() {
 
         })
 
-        mBinding.mineOptionsRecycler.layoutManager = StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.VERTICAL)
-
+        mBinding.mineOptionsRecycler.layoutManager = LinearLayoutManager(context)
+        val dividerItemDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
+        context?.let { its ->
+            ContextCompat.getDrawable(its, R.color.divider)
+                ?.let { dividerItemDecoration.setDrawable(it) }
+        }
+        mBinding.mineOptionsRecycler.addItemDecoration(dividerItemDecoration)
         mBinding.refreshLayout.setEnableAutoLoadMore(false)
         mBinding.refreshLayout.setEnableLoadMore(false)
         mBinding.refreshLayout.setEnableLoadMoreWhenContentNotFull(false) //是否在列表不满一页时候开启上拉加载功能
@@ -206,9 +214,9 @@ class MineFragment : BaseFragment<FragmentMineBinding, MineViewModel>() {
                 item: NavOptionBean
             ) {
                 if (null != holder.dataBinding) {
-                    holder.dataBinding!!.itemNavOptionImg.load(item.icon){
-                        this.allowHardware(false)
-                    }
+//                    holder.dataBinding!!.itemNavOptionImg.load(item.icon){
+//                        this.allowHardware(false)
+//                    }
                     holder.dataBinding!!.itemNavOptionTitle.text = item.title
                     holder.dataBinding!!.itemNavOptionLay.setOnClickListener(object :NoMoreClickListener(){
                         override fun OnMoreClick(view: View) {

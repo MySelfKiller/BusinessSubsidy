@@ -8,31 +8,27 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/item_nav_option_lay"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/dp_15"
-        android:layout_marginHorizontal="@dimen/dp_5">
-
-
-        <ImageView
-            android:id="@+id/item_nav_option_img"
-            android:layout_width="@dimen/dp_35"
-            android:layout_height="@dimen/dp_35"
-            android:src="@mipmap/ic_setting"
-            android:scaleType="fitXY"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+        android:layout_height="wrap_content">
         <TextView
             android:id="@+id/item_nav_option_title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="结算进度"
-            android:layout_marginTop="@dimen/dp_10"
-            android:textSize="@dimen/sp_13"
-            android:textColor="@color/black1"
-            app:layout_constraintTop_toBottomOf="@id/item_nav_option_img"
+            android:paddingVertical="@dimen/dp_14"
+            android:paddingHorizontal="@dimen/dp_20"
+            android:text="我的订单"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
-
+        <ImageView
+            android:layout_width="@dimen/dp_15"
+            android:layout_height="@dimen/dp_15"
+            android:src="@mipmap/forward2_light"
+            android:layout_marginEnd="@dimen/dp_20"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
