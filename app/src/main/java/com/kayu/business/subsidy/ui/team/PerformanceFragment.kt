@@ -101,6 +101,8 @@ class PerformanceFragment : BaseFragment<FragmentPerformanceBinding, Performance
                             holder.dataBinding!!.itemRankName.text = item.rank
                             if(item.isCurrent ==1){
                                 holder.dataBinding!!.itemRankName.setTextColor(resources.getColor(R.color.red,null))
+                            }else{
+                                holder.dataBinding!!.itemRankName.setTextColor(resources.getColor(R.color.grayText8,null))
                             }
                         }
                     }
