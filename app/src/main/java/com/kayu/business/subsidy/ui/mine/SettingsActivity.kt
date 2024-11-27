@@ -96,15 +96,15 @@ class SettingsActivity : BaseActivity<ActivitySettingsBinding, SettingsViewModel
 
             override fun OnMoreErrorClick() {}
         })
-        mBinding.settingsLogOff.setOnClickListener(object: NoMoreClickListener(){
-            override fun OnMoreClick(view: View) {
-                val intent = Intent(this@SettingsActivity, LogOffActivity::class.java)
-                startActivity(intent)
-            }
-
-            override fun OnMoreErrorClick() {}
-
-        })
+//        mBinding.settingsLogOff.setOnClickListener(object: NoMoreClickListener(){
+//            override fun OnMoreClick(view: View) {
+//                val intent = Intent(this@SettingsActivity, LogOffActivity::class.java)
+//                startActivity(intent)
+//            }
+//
+//            override fun OnMoreErrorClick() {}
+//
+//        })
 
 //        mBinding.settingsCustomerTv.setOnClickListener(object: NoMoreClickListener(){
 //            override fun OnMoreClick(view: View) {
