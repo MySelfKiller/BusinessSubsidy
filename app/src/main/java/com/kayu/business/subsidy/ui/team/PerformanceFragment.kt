@@ -59,7 +59,7 @@ class PerformanceFragment : BaseFragment<FragmentPerformanceBinding, Performance
                 val strDate = SimpleDateFormat("MM.dd.yyyy").format(Date())
                 val strMonth = strDate.split(".")[0].toInt().toString()
                 mBinding.perfCurrentMonthTotal.text = strMonth+"月团队总业绩："
-                val ransk = it.ranks
+//                val ransk = it.ranks
                 val rankList = mutableListOf<RankData>()
                 for ( index in 0 until  it.ranks.size){
                     if (index !=0){
@@ -75,8 +75,9 @@ class PerformanceFragment : BaseFragment<FragmentPerformanceBinding, Performance
                                     "还差"+ (it.ranks[index].endCount+1 - it.tmTeamSettleCount).toString()+
                                     "/张"
                         }
-                        val difCount =it.ranks[index].endCount+1-it.ranks[index].beginCount
-                        val stopX = ((it.tmTeamSettleCount-it.ranks[index].beginCount+difCount *(index) )/ ( difCount * (ransk.size-1)).toFloat())
+//                        val difCount =it.ranks[index].endCount+1-it.ranks[index].beginCount
+//                        val stopX = ((it.tmTeamSettleCount-it.ranks[index].beginCount+difCount *(index) )/ ( difCount * (ransk.size-1)).toFloat())
+                        val stopX = index.toFloat()/(it.ranks.size-1)
 //                        val stopX = (20 / (it.ranks[index].endCount * (ransk.size-1)).toFloat())
 //                        LogUtil.e("等级划分值",it.ranks[index].rank+"----"+stopX.toString())
                         ConstraintSet().also { adx->
