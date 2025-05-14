@@ -305,6 +305,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
                 mBinding.homeSmartBanner.setImageLoader(BannerImageLoader())
                 mBinding.homeSmartBanner.setImages(urlList)
                 mBinding.homeSmartBanner.setDelayTime(2000)
+                mBinding.homeSmartBanner.setOnBannerListener { position ->
+                    val target = bannerBeans[position].url
+                    judgeURL2Jump(target)
+                }
                 mBinding.homeSmartBanner.start()
                     .setOnPageChangeListener(object : ViewPager.OnPageChangeListener {
                         override fun onPageScrolled(
@@ -317,10 +321,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
 
                         override fun onPageScrollStateChanged(state: Int) { }
                     })
-                mBinding.homeSmartBanner.setOnBannerListener { position ->
-                    val target = bannerBeans[position].url
-                    judgeURL2Jump(target)
-                }
+
             },{
                 LogUtil.e("产品数据报错", it.toString())
             })
