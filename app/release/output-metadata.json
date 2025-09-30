@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.kayu.business.subsidy",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 3,
+      "versionName": "1.0.2",
+      "outputFile": "BusinessSubsidy_1.0.2_release_202509301524.apk"
+    }
+  ],
+  "elementType": "File"
+}
