@@ -140,6 +140,15 @@ class MineFragment : BaseFragment<FragmentMineBinding, MineViewModel>() {
     }
 
     override fun initObserve() {
+        mViewModel.cashOutDetailRULResult.observe(this) { it ->
+            parseState(it, {
+                if (!it.url0.isNullOrEmpty()){
+                    mViewModel.cashOutDetailRUL = it.url0
+                }
+            }, {
+            })
+        }
+
         mViewModel.userDetailsResult.observe(this) { it ->
             parseState(it, { result ->
                 SMApplication.instance.userDetails = result
@@ -210,11 +219,11 @@ class MineFragment : BaseFragment<FragmentMineBinding, MineViewModel>() {
     }
 
     override fun initRequestData() {
-
     }
 
 
     private fun reqData() {
+        mViewModel.getCashOutRUL()
 //        mViewModel.getUserSettlementData()
         mViewModel.getUserDetail()
         mViewModel.getNavList()
