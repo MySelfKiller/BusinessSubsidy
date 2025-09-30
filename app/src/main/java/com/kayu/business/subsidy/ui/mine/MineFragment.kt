@@ -79,10 +79,29 @@ class MineFragment : BaseFragment<FragmentMineBinding, MineViewModel>() {
 
         mBinding.mineUserInfoLay.setOnClickListener(object : NoMoreClickListener(){
             override fun OnMoreClick(view: View) {
-                val intent = Intent(context, CashOutActivity::class.java)
-                intent.putExtra("title", "提现")
-                intent.putExtra("back", "我的")
-                startActivity(intent)
+//                val intent = Intent(context, CashOutActivity::class.java)
+//                intent.putExtra("title", "提现")
+//                intent.putExtra("back", "我的")
+//                startActivity(intent)
+
+                if (mViewModel.cashOutDetailRUL.isEmpty()){
+                    ToastUtils.show("无法使用")
+//                    mViewModel.getCashOutRUL()
+                }else {
+                    val intent = Intent(context, WebViewActivity::class.java)
+                    val sb = StringBuilder()
+                    sb.append(mViewModel.cashOutDetailRUL)
+                    if (mViewModel.cashOutDetailRUL.contains("?")) {
+                        sb.append("&token=")
+                    } else {
+                        sb.append("?token=")
+                    }
+                    sb.append(SMApplication.instance.token)
+//                    sb.append("&id="+item.id)
+                    intent.putExtra("url", sb.toString())
+                    intent.putExtra("from", "提现")
+                    startActivity(intent)
+                }
             }
 
             override fun OnMoreErrorClick() {}

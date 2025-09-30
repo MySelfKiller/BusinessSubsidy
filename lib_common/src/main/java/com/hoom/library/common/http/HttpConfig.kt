@@ -7,6 +7,7 @@ object HttpConfig {
 
     //webview关闭标识
     const val CLOSE_WEB_VIEW = "https://close/"
+    const val CLOSE_WEB_VIEW1 = "https://www.kayu.close.cn/"
 
     const val API_GET_IMG_CODE = "api/getImgCapt"                                       //1、	获取图片验证码
     const val API_GET_SMS_CODE = "api/getSmsCapt/{phone}"                               //2、	获取短信验证码

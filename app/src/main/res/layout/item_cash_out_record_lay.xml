@@ -17,6 +17,21 @@
             android:paddingBottom="@dimen/dp_10"
             android:weightSum="10">
             <TextView
+                android:id="@+id/item_record_btn_detail"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="查看详细"
+                android:textSize="@dimen/sp_10"
+                android:textColor="@color/orange_tip"
+                android:paddingVertical="@dimen/dp_4"
+                android:paddingHorizontal="@dimen/dp_14"
+                android:background="@drawable/solid_orange_shape"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginEnd="@dimen/dp_6"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+            <TextView
                 android:id="@+id/id_item_record_username"
                 android:layout_width="wrap_content"
                 android:text="提现姓名："
@@ -62,42 +77,83 @@
                 app:layout_constraintBottom_toBottomOf="@id/id_item_record_bank_account"
                 app:layout_constraintStart_toEndOf="@id/id_item_record_bank_account"/>
             <TextView
-                android:id="@+id/id_item_record_amount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:paddingVertical="@dimen/dp_3"
-                android:text="提现金额："
-                android:textColor="@color/black"
-                android:textSize="@dimen/sp_14"
-                app:layout_constraintTop_toBottomOf="@id/id_item_record_bank_account"
-                app:layout_constraintStart_toStartOf="parent"/>
-            <TextView
                 android:id="@+id/item_record_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 android:paddingVertical="@dimen/dp_3"
-                android:text="186"
-                android:textStyle="bold"
-                android:textColor="@color/red_text3"
+                android:text="提现金额：86元"
+                android:textColor="@color/black"
                 android:textSize="@dimen/sp_14"
-                app:layout_constraintTop_toTopOf="@id/id_item_record_amount"
-                app:layout_constraintBottom_toBottomOf="@id/id_item_record_amount"
-                app:layout_constraintStart_toEndOf="@id/id_item_record_amount"/>
-            <TextView
-                android:id="@+id/item_record_amount_unit"
+                app:layout_constraintTop_toBottomOf="@id/id_item_record_bank_account"
+                app:layout_constraintStart_toStartOf="parent"/>
+            <!--            <TextView-->
+            <!--                android:id="@+id/item_record_amount"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:maxLines="1"-->
+            <!--                android:paddingVertical="@dimen/dp_3"-->
+            <!--                android:text="186"-->
+            <!--                android:textStyle="bold"-->
+            <!--                android:textColor="@color/red_text4"-->
+            <!--                android:textSize="@dimen/sp_14"-->
+            <!--                app:layout_constraintTop_toTopOf="@id/id_item_record_amount"-->
+            <!--                app:layout_constraintBottom_toBottomOf="@id/id_item_record_amount"-->
+            <!--                app:layout_constraintStart_toEndOf="@id/id_item_record_amount"/>-->
+            <!--            <TextView-->
+            <!--                android:id="@+id/item_record_amount_unit"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:maxLines="1"-->
+            <!--                android:text="元"-->
+            <!--                android:textColor="@color/red_text4"-->
+            <!--                android:textSize="@dimen/sp_13"-->
+            <!--                android:textStyle="bold"-->
+            <!--                android:paddingBottom="@dimen/dp_2"-->
+            <!--                app:layout_constraintTop_toTopOf="@id/item_record_amount"-->
+            <!--                app:layout_constraintStart_toEndOf="@id/item_record_amount"-->
+            <!--                app:layout_constraintBottom_toBottomOf="@id/item_record_amount"/>-->
+            <LinearLayout
+                android:id="@+id/settle_arrive_amount_lay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:text="元"
-                android:textColor="@color/red_text3"
-                android:textSize="@dimen/sp_13"
-                android:textStyle="bold"
-                android:paddingBottom="@dimen/dp_2"
-                app:layout_constraintTop_toTopOf="@id/item_record_amount"
-                app:layout_constraintStart_toEndOf="@id/item_record_amount"
-                app:layout_constraintBottom_toBottomOf="@id/item_record_amount"/>
+                android:visibility="gone"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/item_record_amount"
+                app:layout_constraintStart_toStartOf="parent">
+                <TextView
+                    android:id="@+id/id_item_settle_arrive_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:paddingVertical="@dimen/dp_3"
+                    android:text="到账金额："
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintTop_toBottomOf="@id/id_item_record_bank_account"
+                    app:layout_constraintStart_toStartOf="parent"/>
+                <TextView
+                    android:id="@+id/item_settle_arrive_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:paddingVertical="@dimen/dp_3"
+                    android:text="186"
+                    android:textStyle="bold"
+                    android:textColor="@color/red_text4"
+                    android:textSize="@dimen/sp_14"/>
+                <TextView
+                    android:id="@+id/item_settle_arrive_amount_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="元"
+                    android:textColor="@color/red_text4"
+                    android:textSize="@dimen/sp_13"
+                    android:textStyle="bold"
+                    android:paddingBottom="@dimen/dp_2"/>
+            </LinearLayout>
+
             <TextView
                 android:id="@+id/id_item_record_state"
                 android:layout_width="wrap_content"
@@ -107,7 +163,7 @@
                 android:text="提现状态："
                 android:textColor="@color/black"
                 android:textSize="@dimen/sp_14"
-                app:layout_constraintTop_toBottomOf="@id/item_record_amount"
+                app:layout_constraintTop_toBottomOf="@id/settle_arrive_amount_lay"
                 app:layout_constraintStart_toStartOf="parent"/>
             <TextView
                 android:id="@+id/item_record_state"

@@ -1,19 +1,25 @@
 package com.kayu.business.subsidy.ui.settlement
 
+import android.content.Intent
 import android.view.LayoutInflater
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
+import com.hjq.toast.ToastUtils
 import com.hoom.library.common.ext.parseState
 import com.hoom.library.common.ui.BaseFragment
 import com.kayu.business.subsidy.R
+import com.kayu.business.subsidy.SMApplication
 import com.kayu.business.subsidy.data.bean.CashOutBean
 import com.kayu.business.subsidy.databinding.FragmentCashOutRecordBinding
 import com.kayu.business.subsidy.databinding.ItemCashOutRecordLayBinding
+import com.kayu.business.subsidy.ui.WebViewActivity
 import com.kayu.utils.AppUtil.getStringAmount
 import com.kayu.utils.LogUtil
+import com.kayu.utils.NoMoreClickListener
 import com.kongzue.dialog.v3.WaitDialog
 import com.scwang.smart.refresh.layout.listener.OnLoadMoreListener
 import com.scwang.smart.refresh.layout.listener.OnRefreshListener
@@ -103,6 +109,15 @@ class CashOutRecordFragment : BaseFragment<FragmentCashOutRecordBinding, CashOut
 //    }
 
     override fun initObserve() {
+        mViewModel.cashOutDetailRULResult.observe(this) { it ->
+            parseState(it, {
+                if (!it.url1.isNullOrEmpty()){
+                    mViewModel.cashOutDetailRUL = it.url1
+                }
+            }, {
+            })
+        }
+
         mViewModel.cashOutListResult.observe(this){ it ->
             parseState(it,{
                 val listNewData = mutableListOf<CashOutBean>()
@@ -152,10 +167,42 @@ class CashOutRecordFragment : BaseFragment<FragmentCashOutRecordBinding, CashOut
                 if (null != holder.dataBinding) {
                     holder.dataBinding!!.itemRecordUsername.text = item.username
                     holder.dataBinding!!.itemRecordBankAccount.text = item.bankName+"（"+item.bankNo.substring(item.bankNo.length-4)+"）"
-                    holder.dataBinding!!.itemRecordAmount.text = getStringAmount(item.amount)
+                    holder.dataBinding!!.itemRecordAmount.text =  "提现金额：" + getStringAmount(item.amount)+"元"
 //                    holder.dataBinding!!.itemSettleArriveAmount.text = "到账金额：" + getStringAmount(item.actualAmount)
                     holder.dataBinding!!.itemRecordState.text = item.stateTitle
                     holder.dataBinding!!.itemRecordTime.text = item.createTime
+                    if (item.state ==3){
+                        holder.dataBinding!!.itemRecordBtnDetail.visibility = View.VISIBLE
+                        holder.dataBinding!!.itemSettleArriveAmount.text = getStringAmount(item.actualAmount)
+                        holder.dataBinding!!.settleArriveAmountLay.visibility = View.VISIBLE
+                        holder.dataBinding!!.itemRecordBtnDetail.setOnClickListener(object :
+                            NoMoreClickListener(){
+                            override fun OnMoreClick(view: View) {
+                                if (mViewModel.cashOutDetailRUL.isEmpty()){
+                                    ToastUtils.show("获取中，稍后重试")
+                                    mViewModel.getCashOutDetailRUL()
+                                }else {
+                                    val intent = Intent(context, WebViewActivity::class.java)
+                                    val sb = StringBuilder()
+                                    sb.append(mViewModel.cashOutDetailRUL)
+                                    if (mViewModel.cashOutDetailRUL.contains("?")) {
+                                        sb.append("&token=")
+                                    } else {
+                                        sb.append("?token=")
+                                    }
+                                    sb.append(SMApplication.instance.token)
+                                    sb.append("&id="+item.id)
+                                    intent.putExtra("url", sb.toString())
+                                    intent.putExtra("from", "订单详情")
+                                    startActivity(intent)
+                                }
+                            }
+                            override fun OnMoreErrorClick() { }
+                        })
+                    }else {
+                        holder.dataBinding!!.itemRecordBtnDetail.visibility = View.GONE
+                        holder.dataBinding!!.settleArriveAmountLay.visibility = View.GONE
+                    }
                 }
             }
         }
@@ -164,6 +211,7 @@ class CashOutRecordFragment : BaseFragment<FragmentCashOutRecordBinding, CashOut
     }
 
     override fun initRequestData() {
+        mViewModel.getCashOutDetailRUL()
     }
 
     private fun reqListData(page: Int){

@@ -19,6 +19,11 @@ class MineViewModel @Inject constructor(private val mRepository: MainRepository)
     var userDetailsResult = MutableLiveData<ResultState<UserDetails>>()
     var navListLiveData = MutableLiveData<ResultState<MutableList<NavOptionBean>>>()
     var adapter: BaseQuickAdapter<NavOptionBean, BaseDataBindingHolder<ItemNavOptionBinding>>? = null
+    //提现功能页URL返回数据
+    var cashOutDetailRULResult = MutableLiveData<ResultState<SystemParamBean>>()
+    //提现功能页URL
+    var cashOutDetailRUL = ""
+
 
     fun getRankDetail(){
         request({ mRepository.getSysParam(5) }, rankDetailResult)
@@ -32,6 +37,13 @@ class MineViewModel @Inject constructor(private val mRepository: MainRepository)
      */
     fun getNavList() {
         request({ mRepository.getNavList() }, navListLiveData)
+    }
+
+    /**
+     * 获取提现功能页URL链接
+     */
+    fun getCashOutRUL(){
+        request({ mRepository.getSysParam(11) }, cashOutDetailRULResult)
     }
 
 }

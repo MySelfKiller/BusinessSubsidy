@@ -422,7 +422,7 @@ class WebViewActivity : BaseActivity<ActivityWebViewBinding, WebViewModel>() {
 
                 //                view.loadUrl(url);
                 if (url.startsWith("http:") || url.startsWith("https:")) {
-                    return if ((url == HttpConfig.CLOSE_WEB_VIEW) || url.endsWith("close")) {
+                    return if ((url == HttpConfig.CLOSE_WEB_VIEW) || url.endsWith("close") || url == HttpConfig.CLOSE_WEB_VIEW1) {
                         this@WebViewActivity.finish()
                         true
                     } else {
