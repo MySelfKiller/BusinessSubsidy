@@ -23,8 +23,8 @@ class OrderDetaiViewModel @Inject constructor(private val mRepository: MainRepos
     val orderDetailLiveData = MutableLiveData<ResultState<OrderDetailBean>>()
     var adapter: BaseQuickAdapter<OrderStateBean, BaseDataBindingHolder<ItemStateOrderDetailBinding>>? = null
 
-    var customerResult = MutableLiveData<ResultState<SystemParamBean>>()
-    var customerLiveData = MutableLiveData<SystemParamBean>()
+    var customerResult = MutableLiveData<ResultState<SystemParamBean?>>()
+    var customerLiveData = MutableLiveData<SystemParamBean?>()
 
 
     fun getWeChatCustomer(){

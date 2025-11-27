@@ -134,11 +134,11 @@ class PerformanceFragment : BaseFragment<FragmentPerformanceBinding, Performance
             parseState(it, {
                 mBinding.perfSubsidyRule.setOnClickListener(object :NoMoreClickListener(){
                     override fun OnMoreClick(view: View) {
-                        if (!it.url0.isNullOrEmpty()){
+                        if (it?.url0.isNullOrEmpty()){
                             val intent = Intent(context, WebViewActivity::class.java)
                             val sb = StringBuilder()
-                            sb.append(it.url0)
-                            if (it.url0!!.contains("?")) {
+                            sb.append(it?.url0)
+                            if (it?.url0!!.contains("?")) {
                                 sb.append("&token=")
                             } else {
                                 sb.append("?token=")

@@ -14,13 +14,13 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MineViewModel @Inject constructor(private val mRepository: MainRepository) : BaseViewModel() {
-    var rankDetailResult = MutableLiveData<ResultState<SystemParamBean>>()
+    var rankDetailResult = MutableLiveData<ResultState<SystemParamBean?>>()
     var rankDetailLiveData = MutableLiveData<SystemParamBean>()
     var userDetailsResult = MutableLiveData<ResultState<UserDetails>>()
     var navListLiveData = MutableLiveData<ResultState<MutableList<NavOptionBean>>>()
     var adapter: BaseQuickAdapter<NavOptionBean, BaseDataBindingHolder<ItemNavOptionBinding>>? = null
     //提现功能页URL返回数据
-    var cashOutDetailRULResult = MutableLiveData<ResultState<SystemParamBean>>()
+    var cashOutDetailRULResult = MutableLiveData<ResultState<SystemParamBean?>>()
     //提现功能页URL
     var cashOutDetailRUL = ""
 

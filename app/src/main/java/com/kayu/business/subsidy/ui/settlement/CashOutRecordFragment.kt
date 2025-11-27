@@ -111,8 +111,8 @@ class CashOutRecordFragment : BaseFragment<FragmentCashOutRecordBinding, CashOut
     override fun initObserve() {
         mViewModel.cashOutDetailRULResult.observe(this) { it ->
             parseState(it, {
-                if (!it.url1.isNullOrEmpty()){
-                    mViewModel.cashOutDetailRUL = it.url1
+                if (it?.url1.isNullOrEmpty()){
+                    mViewModel.cashOutDetailRUL = it?.url1.toString()
                 }
             }, {
             })

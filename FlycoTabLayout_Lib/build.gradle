@@ -1,2 +1,7 @@
-apply plugin: 'com.android.library'
-apply from:'../dependencies.gradle'
+apply from: '../base_lib.gradle'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'])
+    api "androidx.appcompat:appcompat:1.4.1"
+    implementation "androidx.viewpager:viewpager:1.0.0"
+}

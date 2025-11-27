@@ -230,7 +230,7 @@ interface UnionAPIService {
      * 获取系统参数表
      */
     @GET(HttpConfig.API_GET_SYS_PARAM)
-    suspend fun getSysParam(@Path("type") type: Int): ApiResponse<SystemParamBean>
+    suspend fun getSysParam(@Path("type") type: Int): ApiResponse<SystemParamBean?>
 
     /**
      * 获取储蓄卡列表

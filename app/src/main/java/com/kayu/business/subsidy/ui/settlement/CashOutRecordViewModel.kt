@@ -25,7 +25,7 @@ class CashOutRecordViewModel @Inject constructor(private val mRepository: MainRe
     var cashOutLiveData = MutableLiveData<MutableList<CashOutBean>>()
 
     var cashOutDetailRUL = ""//提现记录详情页URL链接
-    var cashOutDetailRULResult = MutableLiveData<ResultState<SystemParamBean>>()//提现记录详情页URL链接结果
+    var cashOutDetailRULResult = MutableLiveData<ResultState<SystemParamBean?>>()//提现记录详情页URL链接结果
 
 
     fun getCashOutList(reqDateMap: HashMap<String,Any>){

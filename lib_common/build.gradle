@@ -3,17 +3,13 @@
 //****************************************
 
 apply from: '../base_lib.gradle'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
 
 android {
 
     defaultConfig {
         resValue "string", "BUGLY_APP_ID", "5778f340aa"
-
-//        javaCompileOptions {
-//            annotationProcessorOptions {
-//                arguments["dagger.hilt.disableModulesHaveInstallInCheck"] = "true"
-//            }
-//        }
     }
 
     buildFeatures {
@@ -33,16 +29,12 @@ dependencies {
     api 'com.davemorrissey.labs:subsampling-scale-image-view:3.10.0'
     //轮播图
     api 'com.github.zhpanvip:BannerViewPager:3.1.5'
-    //BaseAdapter
-//    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.11'
     //view阴影状态布局
     api 'com.github.zhangjianhd:ShadowDecorate:1.0.2'
     //圆角图片
     api 'com.rishabhharit.roundedimageview:RoundedImageView:0.8.4'
     //lottie动画
     api 'com.airbnb.android:lottie:5.0.3'
-    //导航栏
-//    api 'com.github.hackware1993:MagicIndicator:1.7.0'
     //数字进度条
     api 'com.daimajia.numberprogressbar:library:1.4@aar'
 
@@ -59,16 +51,12 @@ dependencies {
     api "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
     api 'com.tencent.mm.opensdk:wechat-sdk-android:+'//微信分享
     api 'com.amap.api:location:latest.integration'//高德定位
-//    api 'com.amap.api:3dmap:latest.integration'//高德地图
 
-//    kapt "com.alibaba:arouter-compiler:1.5.1"
     kapt "org.greenrobot:eventbus-annotation-processor:3.2.0"
     kapt "com.google.auto.service:auto-service-annotations:1.0.1"
-//    kapt DependencyConfig.JetPack.HiltApt
     kapt "com.google.dagger:hilt-android-compiler:2.44"
     kapt "androidx.lifecycle:lifecycle-common-java8:2.4.1"
     kapt "androidx.room:room-compiler:2.4.2"
-
 
     api project(path: ':lib_base')
     api project(path: ':textbanner')

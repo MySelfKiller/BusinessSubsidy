@@ -285,9 +285,9 @@ class CashOutActivity : BaseActivity<ActivityCashOutBinding,CashOutViewModel>() 
 
         mViewModel.systemParamResult.observe(this){ it->
             parseState(it,{
-                mViewModel.tips1 = it.data1
-                mViewModel.cash_tips = it.data0
-                mBinding.cashOutTips.text = it.data1
+                mViewModel.tips1 = it?.data1.toString()
+                mViewModel.cash_tips = it?.data0.toString()
+                mBinding.cashOutTips.text = it?.data1
             },{
 
             })

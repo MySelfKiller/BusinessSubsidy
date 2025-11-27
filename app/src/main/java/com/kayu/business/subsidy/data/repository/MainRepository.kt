@@ -112,7 +112,7 @@ class MainRepository @Inject constructor(private val mService: UnionAPIService) 
         return mService.getCardList()
     }
 
-    suspend fun getSysParam(type: Int) : ApiResponse<SystemParamBean>{
+    suspend fun getSysParam(type: Int) : ApiResponse<SystemParamBean?>{
         return mService.getSysParam(type)
     }
 

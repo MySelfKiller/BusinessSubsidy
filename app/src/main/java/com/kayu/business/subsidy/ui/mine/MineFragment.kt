@@ -142,8 +142,8 @@ class MineFragment : BaseFragment<FragmentMineBinding, MineViewModel>() {
     override fun initObserve() {
         mViewModel.cashOutDetailRULResult.observe(this) { it ->
             parseState(it, {
-                if (!it.url0.isNullOrEmpty()){
-                    mViewModel.cashOutDetailRUL = it.url0
+                if (it?.url0.isNullOrEmpty()){
+                    mViewModel.cashOutDetailRUL = it?.url0.toString()
                 }
             }, {
             })
@@ -180,11 +180,11 @@ class MineFragment : BaseFragment<FragmentMineBinding, MineViewModel>() {
             parseState(it, {
                 mBinding.userRankDetail.setOnClickListener(object :NoMoreClickListener(){
                     override fun OnMoreClick(view: View) {
-                        if (!it.url0.isNullOrEmpty()){
+                        if (it?.url0.isNullOrEmpty()){
                             val intent = Intent(requireContext(), WebViewActivity::class.java)
                             val sb = StringBuilder()
-                            sb.append(it.url0)
-                            if (it.url0!!.contains("?")) {
+                            sb.append(it?.url0)
+                            if (it?.url0!!.contains("?")) {
                                 sb.append("&token=")
                             } else {
                                 sb.append("?token=")

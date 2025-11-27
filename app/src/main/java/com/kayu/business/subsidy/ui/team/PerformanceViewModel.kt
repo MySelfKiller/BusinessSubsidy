@@ -15,7 +15,7 @@ class PerformanceViewModel @Inject constructor(private val mRepository: MainRepo
     var isRefresh = false
     var mHasLoadedOnce = false // 页面已经加载过
 
-    var subsidyRuleResult = MutableLiveData<ResultState<SystemParamBean>>()
+    var subsidyRuleResult = MutableLiveData<ResultState<SystemParamBean?>>()
     var statisticLiveData = MutableLiveData<ResultState<StatisticData>>()
 
 

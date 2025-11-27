@@ -22,7 +22,7 @@ class CashOutViewModel @Inject constructor(private val mRepository: MainReposito
     var cardsList: MutableList<DebitCardBean>? = null
     var userDetails : UserDetails? = null
 
-    var systemParamResult = MutableLiveData<ResultState<SystemParamBean>>()
+    var systemParamResult = MutableLiveData<ResultState<SystemParamBean?>>()
     var cardListResult = MutableLiveData<ResultState<MutableList<DebitCardBean>>>()
     var userDetailsResult = MutableLiveData<ResultState<UserDetails>>()
     var applyCashOutResult = MutableLiveData<ResultState<Any?>>()
