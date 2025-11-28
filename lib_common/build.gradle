@@ -52,6 +52,9 @@ dependencies {
     api 'com.tencent.mm.opensdk:wechat-sdk-android:+'//微信分享
     api 'com.amap.api:location:latest.integration'//高德定位
 
+    // Downgraded to 1.2.28 due to dexing issues with 1.2.29
+    api 'pl.droidsonroids.gif:android-gif-drawable:1.2.28' 
+
     kapt "org.greenrobot:eventbus-annotation-processor:3.2.0"
     kapt "com.google.auto.service:auto-service-annotations:1.0.1"
     kapt "com.google.dagger:hilt-android-compiler:2.44"

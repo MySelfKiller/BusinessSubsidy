@@ -14,10 +14,10 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
 
-import androidx.renderscript.Allocation;
-import androidx.renderscript.Element;
-import androidx.renderscript.RenderScript;
-import androidx.renderscript.ScriptIntrinsicBlur;
+import android.renderscript.Allocation;
+import android.renderscript.Element;
+import android.renderscript.RenderScript;
+import android.renderscript.ScriptIntrinsicBlur;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
@@ -159,18 +159,10 @@ public class BlurView extends View {
                 try {
                     mRenderScript = RenderScript.create(getContext());
                     mBlurScript = ScriptIntrinsicBlur.create(mRenderScript, Element.U8_4(mRenderScript));
-                } catch (androidx.renderscript.RSRuntimeException e) {
-                    if (isDebug(getContext())) {
-                        if (e.getMessage() != null && e.getMessage().startsWith("Error loading RS jni library: java.lang.UnsatisfiedLinkError:")) {
-                            throw new RuntimeException("Error loading RS jni library, Upgrade buildToolsVersion=\"24.0.2\" or higher may solve this issue");
-                        } else {
-                            throw e;
-                        }
-                    } else {
-                        // In release mode, just ignore
-                        releaseScript();
-                        return false;
-                    }
+                } catch (Exception e) {
+                   // Fallback or ignore
+                   releaseScript();
+                   return false;
                 }
             }
             
@@ -375,16 +367,6 @@ public class BlurView extends View {
     }
     
     private static StopException STOP_EXCEPTION = new StopException();
-    
-    static {
-        try {
-            BlurView.class.getClassLoader().loadClass("androidx.renderscript.RenderScript");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            throw new RuntimeException("\n错误！\nRenderScript支持库未启用，要启用模糊效果，请在您的app的Gradle配置文件中添加以下语句：" +
-                    "\nandroid { \n...\n  defaultConfig { \n    ...\n    renderscriptTargetApi 14 \n    renderscriptSupportModeEnabled true \n  }\n}");
-        }
-    }
     
     // android:debuggable="true" in AndroidManifest.xml (auto set by build tool)
     static Boolean DEBUG = null;

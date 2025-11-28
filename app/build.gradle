@@ -16,7 +16,7 @@ android {
         versionName "1.0.2"
         multiDexEnabled true
         renderscriptTargetApi 17
-        renderscriptSupportModeEnabled true
+        // renderscriptSupportModeEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         javaCompileOptions {
@@ -142,7 +142,8 @@ dependencies {
 
     implementation 'com.rishabhharit.roundedimageview:RoundedImageView:0.8.4'
     implementation 'com.github.chrisbanes.photoview:library:1.2.4'
-    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.1'
+    // Downgraded to 1.2.28 due to dexing issues with 1.2.29
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.28'
     implementation 'com.github.jenly1314:zxing-lite:2.2.1'
     implementation 'com.amap.api:location:latest.integration'
 

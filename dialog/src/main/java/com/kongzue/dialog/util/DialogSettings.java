@@ -5,9 +5,9 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.RippleDrawable;
 import android.util.Log;
 
-import androidx.renderscript.Element;
-import androidx.renderscript.RenderScript;
-import androidx.renderscript.ScriptIntrinsicBlur;
+import android.renderscript.Element;
+import android.renderscript.RenderScript;
+import android.renderscript.ScriptIntrinsicBlur;
 
 import com.kongzue.dialog.interfaces.DialogLifeCycleListener;
 
@@ -107,7 +107,8 @@ public class DialogSettings {
         boolean isSupport = true;
         try {
             DialogSettings.class.getClassLoader().loadClass("android.graphics.drawable.RippleDrawable");
-            DialogSettings.class.getClassLoader().loadClass("androidx.renderscript.RenderScript");
+            // DialogSettings.class.getClassLoader().loadClass("androidx.renderscript.RenderScript");
+            DialogSettings.class.getClassLoader().loadClass("android.renderscript.RenderScript");
         } catch (ClassNotFoundException e) {
             isSupport = false;
             if (DEBUGMODE) {
